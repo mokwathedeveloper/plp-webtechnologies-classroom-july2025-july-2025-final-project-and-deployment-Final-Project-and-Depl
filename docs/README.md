@@ -12,6 +12,7 @@ Welcome to the comprehensive documentation for the BistroDelight restaurant webs
 - [**Hero Carousel Implementation**](HERO_CAROUSEL_IMPLEMENTATION.md) - Interactive carousel with auto-play and navigation
 - [**Menu Filtering System**](MENU_FILTERING_IMPLEMENTATION.md) - Dynamic menu categorization and filtering
 - [**About Page Improvements**](ABOUT_PAGE_IMPROVEMENTS.md) - Enhanced content and interactive elements
+- [**Feature Enhancements Branch**](FEATURE_ENHANCEMENTS_BRANCH.md) - PWA, SEO, accessibility, and reservation system implementation
 
 ## 🏗️ Project Overview
 
@@ -21,11 +22,14 @@ A professional, responsive restaurant website for a fine dining establishment lo
 ### **Key Features:**
 - 🎠 **Interactive Hero Carousel** with 4 slides and smooth transitions
 - 🍽️ **Dynamic Menu Filtering** for starters, main courses, and desserts
+- 📅 **Advanced Reservation System** with real-time validation and accessibility
+- 📱 **Progressive Web App (PWA)** with offline support and installable experience
 - 🎨 **Professional Color Scheme** with champagne gold and burgundy accents
 - 📱 **Fully Responsive Design** optimized for all devices
 - 🌍 **Kenya Localization** with Nairobi contact information and EAT timezone
 - ♿ **Accessibility Compliant** meeting WCAG 2.1 AA standards
-- 🔍 **SEO Optimized** with semantic HTML and proper meta tags
+- 🔍 **SEO Optimized** with structured data, sitemaps, and comprehensive meta tags
+- ⚡ **Performance Optimized** with lazy loading, caching, and service workers
 
 ### **Technology Stack:**
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
