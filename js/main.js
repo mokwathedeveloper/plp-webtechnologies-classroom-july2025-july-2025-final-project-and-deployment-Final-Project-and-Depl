@@ -1,9 +1,103 @@
 // =========================
 // MAIN JAVASCRIPT FILE
-// Handles navigation, animations, and interactions
+// Handles navigation, animations, and interactions with accessibility & performance enhancements
 // =========================
 
+// Accessibility utilities
+const AccessibilityUtils = {
+    // Announce to screen readers
+    announce: function(message, priority = 'polite') {
+        const announcer = document.createElement('div');
+        announcer.setAttribute('aria-live', priority);
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.className = 'sr-only';
+        announcer.textContent = message;
+        document.body.appendChild(announcer);
+        setTimeout(() => document.body.removeChild(announcer), 1000);
+    },
+
+    // Trap focus within element
+    trapFocus: function(element) {
+        const focusableElements = element.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        element.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        lastElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        firstElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+        });
+    },
+
+    // Handle keyboard navigation
+    handleKeyboardNav: function(element, callback) {
+        element.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                callback();
+            }
+        });
+    }
+};
+
+// Performance utilities
+const PerformanceUtils = {
+    // Lazy load images
+    lazyLoadImages: function() {
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-load');
+                    img.classList.add('loaded');
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => {
+            img.classList.add('lazy-load');
+            imageObserver.observe(img);
+        });
+    },
+
+    // Preload critical resources
+    preloadCriticalResources: function() {
+        const criticalImages = [
+            'images/hero/hero.webp',
+            'images/hero/hero2.webp'
+        ];
+
+        criticalImages.forEach(src => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = src;
+            document.head.appendChild(link);
+        });
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Initialize performance optimizations
+    PerformanceUtils.lazyLoadImages();
+    PerformanceUtils.preloadCriticalResources();
 
     // =========================
     // HERO CAROUSEL FUNCTIONALITY
