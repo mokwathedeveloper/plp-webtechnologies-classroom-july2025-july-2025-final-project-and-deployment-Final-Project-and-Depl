@@ -63,18 +63,7 @@
     transform: translateX(2px);
 }
 
-/* Social media icons - Professional and minimal */
-.social-link i {
-    font-size: 1.2rem;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    color: var(--cream);
-}
 
-/* Social media icons hover effects - Professional and subtle */
-.social-link:hover i {
-    color: var(--primary-gold);
-    opacity: 0.8;
-}
 
 /* Contact info icons */
 .contact-info i {
@@ -460,8 +449,7 @@ html {
     transform: scaleX(1);
 }
 
-/* Floating Action Button - REMOVED
-   No floating button in bottom right corner as requested by user */
+
 
 /* Global Reset */
 * {
@@ -2317,34 +2305,50 @@ html {
 /* Footer description text - Subtle opacity for visual hierarchy */
 .footer-description {
     color: var(--cream);
-    margin-bottom: 1rem; /* Reduced margin for tighter spacing with social icons */
+    margin-bottom: 1.5rem; /* Space for social icons below */
     opacity: 0.9;
 }
 
-/* Social media icons container - Horizontal layout directly below description */
+/* Social media icons container - Horizontal layout below description */
 .social-links {
     display: flex;
-    gap: 1.5rem; /* Consistent spacing between icons */
-    align-items: center; /* Ensure vertical alignment */
-    justify-content: flex-start; /* Left-aligned to match description text */
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
-    margin-top: 0; /* No extra top margin - directly below description */
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start; /* Left-aligned below description */
+    margin-top: 0;
 }
 
-/* Social media link styling - Professional and minimal */
+/* Social media link styling - Professional appearance */
 .social-link {
-    display: inline-block;
-    font-size: 1.5rem;
-    transition: opacity 0.3s ease;
-    padding: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-/* Social media link hover effects - Subtle professional appearance */
-.social-link:hover {
-    opacity: 0.8;
+/* Social media icons - Professional styling */
+.social-link i {
+    font-size: 1.2rem;
+    color: var(--cream);
+    transition: color 0.3s ease;
 }
+
+/* Professional hover effects - Subtle and elegant */
+.social-link:hover {
+    background: var(--primary-gold);
+    transform: translateY(-2px);
+}
+
+.social-link:hover i {
+    color: var(--white);
+}
+
+
 
 /* Footer navigation links - Clean list styling */
 .footer-links {
@@ -2776,5 +2780,27 @@ html {
         width: 40px;
         height: 40px;
         padding: 0.5rem;
+    }
+}
+
+/* Mobile Footer Social Links */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+
+    .social-link i {
+        font-size: 1.1rem;
     }
 }
