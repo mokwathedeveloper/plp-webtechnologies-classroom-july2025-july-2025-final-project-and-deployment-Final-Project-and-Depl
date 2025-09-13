@@ -442,11 +442,16 @@
         gap: 2rem;
     }
 
-    /* Social media icons - Centered on tablet with consistent spacing */
+    /* Override center alignment for first footer section to keep social icons left-aligned */
+    .footer-section:first-child {
+        text-align: left;
+    }
+
+    /* Social media icons - Left-aligned on tablet, directly below description */
     .social-links {
-        justify-content: center;
-        gap: 2rem; /* Increased spacing for tablet view */
-        margin-top: 1rem; /* Add top margin for better visual separation */
+        justify-content: flex-start; /* Keep left-aligned like description text */
+        gap: 1.5rem; /* Consistent spacing with desktop */
+        margin-top: 0; /* No extra margin - directly below description */
     }
 
     /* About Page Tablet Styles */
@@ -623,11 +628,11 @@
         gap: 1.5rem;
     }
 
-    /* Mobile social media icons - Optimized spacing and sizing */
+    /* Mobile social media icons - Left-aligned below description */
     .social-links {
-        gap: 2rem; /* Generous spacing for mobile touch targets */
-        justify-content: center; /* Center align on mobile */
-        margin-top: 1.5rem; /* Increased top margin for mobile */
+        gap: 1.5rem; /* Consistent spacing for mobile touch targets */
+        justify-content: flex-start; /* Left-aligned to match description text */
+        margin-top: 0; /* No extra margin - directly below description */
     }
 
     .social-link {

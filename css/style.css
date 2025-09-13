@@ -2367,17 +2367,18 @@ html {
 /* Footer description text - Subtle opacity for visual hierarchy */
 .footer-description {
     color: var(--cream);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Reduced margin for tighter spacing with social icons */
     opacity: 0.9;
 }
 
-/* Social media icons container - Clean horizontal layout */
+/* Social media icons container - Horizontal layout directly below description */
 .social-links {
     display: flex;
-    gap: 1.5rem; /* Increased spacing for better visual separation */
+    gap: 1.5rem; /* Consistent spacing between icons */
     align-items: center; /* Ensure vertical alignment */
-    justify-content: flex-start; /* Left-aligned on desktop */
+    justify-content: flex-start; /* Left-aligned to match description text */
     flex-wrap: wrap; /* Allow wrapping on very small screens */
+    margin-top: 0; /* No extra top margin - directly below description */
 }
 
 /* Social media link styling - Completely static without any animations */
