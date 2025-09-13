@@ -442,8 +442,11 @@
         gap: 2rem;
     }
 
+    /* Social media icons - Centered on tablet with consistent spacing */
     .social-links {
         justify-content: center;
+        gap: 2rem; /* Increased spacing for tablet view */
+        margin-top: 1rem; /* Add top margin for better visual separation */
     }
 
     /* About Page Tablet Styles */
@@ -620,12 +623,16 @@
         gap: 1.5rem;
     }
 
+    /* Mobile social media icons - Optimized spacing and sizing */
     .social-links {
-        gap: 1.5rem;
+        gap: 2rem; /* Generous spacing for mobile touch targets */
+        justify-content: center; /* Center align on mobile */
+        margin-top: 1.5rem; /* Increased top margin for mobile */
     }
 
     .social-link {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Larger icons for better mobile accessibility */
+        padding: 0.5rem; /* Add padding for larger touch targets */
     }
 
     /* Mobile icon adjustments */
@@ -874,12 +881,16 @@
         box-shadow: 0 0 0 5px rgba(201, 169, 97, 0.3);
     }
 
-    /* Enhanced mobile touch states */
+    /* Enhanced mobile touch states - Static social links */
     .btn:active,
-    .nav-link:active,
-    .social-link:active {
+    .nav-link:active {
         transform: scale(0.95);
         transition: transform 0.1s ease;
+    }
+
+    /* Social links remain static on mobile for professional appearance */
+    .social-link:active {
+        /* No transform animation for social media icons */
     }
 }
 
