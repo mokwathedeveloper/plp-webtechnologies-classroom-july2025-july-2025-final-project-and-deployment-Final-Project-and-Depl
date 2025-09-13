@@ -178,14 +178,24 @@ const carousel = {
 
 ---
 
-## 🚀 Deployment Considerations
+## 🚀 Deployment Information
+
+### **🌐 Live Production Website**
+**URL**: [https://plp-webtechnologies-classroom-july2-three.vercel.app/](https://plp-webtechnologies-classroom-july2-three.vercel.app/)
+
+**Platform**: Vercel
+**Status**: ✅ Live and Fully Functional
+**Performance**: Global CDN with edge optimization
+**Security**: HTTPS with SSL certificate
+**Deployment**: Automatic from GitHub main branch
 
 ### **Production Optimizations**
-- Minify CSS and JavaScript files
-- Optimize images (compression, format conversion)
-- Enable gzip compression on server
-- Implement proper caching headers
-- Use CDN for static assets
+- ✅ **Vercel Edge Network** - Global CDN for fast loading
+- ✅ **Automatic HTTPS** - SSL certificate included
+- ✅ **Image Optimization** - WebP format with compression
+- ✅ **Gzip Compression** - Enabled by default on Vercel
+- ✅ **Caching Headers** - Optimized for performance
+- ✅ **Mobile Performance** - Lighthouse score optimized
 
 ### **SEO Implementation**
 - Structured data (JSON-LD) for restaurant information

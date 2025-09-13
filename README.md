@@ -2,7 +2,8 @@
 
 > **A professional, responsive restaurant website showcasing exceptional cuisine and elegant atmosphere in Westlands, Nairobi, Kenya.**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://github.com/mokwathedeveloper/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://plp-webtechnologies-classroom-july2-three.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://plp-webtechnologies-classroom-july2-three.vercel.app/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-blue?style=for-the-badge)](https://web.dev/progressive-web-apps/)
 [![Mobile Optimized](https://img.shields.io/badge/Mobile-Optimized-green?style=for-the-badge)](https://developers.google.com/web/fundamentals/design-and-ux/responsive)
 [![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AA-purple?style=for-the-badge)](https://www.w3.org/WAI/WCAG21/quickref/)
@@ -138,12 +139,21 @@ python3 -m http.server 8000
 npx serve .
 ```
 
+### 🚀 Live Deployment
+**🌐 Production URL**: [https://plp-webtechnologies-classroom-july2-three.vercel.app/](https://plp-webtechnologies-classroom-july2-three.vercel.app/)
+
+**Deployment Platform**: Vercel
+**Status**: ✅ Live and Fully Functional
+**Performance**: Optimized for global CDN delivery
+**SSL**: Secured with HTTPS
+
 ### 🚀 Deployment Status
 - **✅ Production Ready** - All features implemented and tested
 - **✅ Cross-Browser Tested** - Chrome, Firefox, Safari, Edge compatibility
 - **✅ Mobile Optimized** - Responsive design across all devices
 - **✅ PWA Compliant** - Installable with offline support
 - **✅ SEO Optimized** - Search engine ready with structured data
+- **✅ Vercel Deployed** - Automatic deployments with global CDN
 
 ### 🎯 Recent Major Updates
 - **🔥 Firefox-Chrome Compatibility Layer** - Eliminated browser rendering differences
@@ -181,7 +191,7 @@ npx serve .
 - **📍 Address**: Westlands Square, Waiyaki Way, Westlands, Nairobi, Kenya
 - **📞 Phone**: +254 720 123 456 | +254 733 987 654
 - **📧 Email**: info@bistrodelight.co.ke
-- **🌐 Website**: [Live Demo](https://github.com/mokwathedeveloper/plp-webtechnologies-classroom-july2025-july-2025-final-project-and-deployment-Final-Project-and-Depl)
+- **🌐 Website**: [https://plp-webtechnologies-classroom-july2-three.vercel.app/](https://plp-webtechnologies-classroom-july2-three.vercel.app/)
 
 **👨‍💻 Technical Support**
 - **📚 Documentation**: Complete technical specs in `/docs` folder
