@@ -3,6 +3,68 @@
    Advanced mobile-first responsive styles with touch optimizations
 ========================= */
 
+/* TABLET LIGHT THEME ENFORCEMENT - 769px to 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        color-scheme: light !important;
+    }
+
+    body {
+        background-color: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* TABLET SECTION BACKGROUNDS */
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section,
+    .stats-section {
+        background-color: #FAF7F2 !important;
+        background: #FAF7F2 !important;
+        color: #2D2D2D !important;
+    }
+
+    .story-section,
+    .chef-section,
+    .contact-section,
+    .cta-section,
+    .contact-hero,
+    .menu-section,
+    .gallery-section,
+    .about-hero,
+    .menu-hero,
+    .gallery-hero,
+    .reservation-hero {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* TABLET FOOTER STYLING */
+    .footer {
+        background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+        color: #FAF7F2 !important;
+    }
+
+    .footer-title,
+    .footer-subtitle {
+        color: #C9A961 !important;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .contact-info p,
+    .hours-info p,
+    .footer-bottom p {
+        color: #FAF7F2 !important;
+    }
+
+    .social-link i {
+        color: #FAF7F2 !important;
+    }
+}
+
 /* Mobile Animation Keyframes */
 @keyframes slideInFromLeft {
     0% {
@@ -66,6 +128,66 @@
 
 /* Enhanced Mobile Touch Targets and CSS Variables */
 @media screen and (max-width: 768px) {
+
+    /* FORCE LIGHT THEME ON MOBILE */
+    html {
+        color-scheme: light !important;
+    }
+
+    body {
+        background-color: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* MOBILE SECTION BACKGROUNDS */
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section,
+    .stats-section {
+        background-color: #FAF7F2 !important;
+        background: #FAF7F2 !important;
+        color: #2D2D2D !important;
+    }
+
+    .story-section,
+    .chef-section,
+    .contact-section,
+    .cta-section,
+    .contact-hero,
+    .menu-section,
+    .gallery-section,
+    .about-hero,
+    .menu-hero,
+    .gallery-hero,
+    .reservation-hero {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* MOBILE FOOTER STYLING */
+    .footer {
+        background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+        color: #FAF7F2 !important;
+    }
+
+    .footer-title,
+    .footer-subtitle {
+        color: #C9A961 !important;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .contact-info p,
+    .hours-info p,
+    .footer-bottom p {
+        color: #FAF7F2 !important;
+    }
+
+    .social-link i {
+        color: #FAF7F2 !important;
+    }
 
     /* Mobile-specific CSS variables */
     :root {
@@ -553,7 +675,67 @@
 
 /* Enhanced Mobile Styles - 480px and below */
 @media screen and (max-width: 480px) {
-    
+
+    /* FORCE LIGHT THEME ON SMALL MOBILE */
+    html {
+        color-scheme: light !important;
+    }
+
+    body {
+        background-color: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* SMALL MOBILE SECTION BACKGROUNDS */
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section,
+    .stats-section {
+        background-color: #FAF7F2 !important;
+        background: #FAF7F2 !important;
+        color: #2D2D2D !important;
+    }
+
+    .story-section,
+    .chef-section,
+    .contact-section,
+    .cta-section,
+    .contact-hero,
+    .menu-section,
+    .gallery-section,
+    .about-hero,
+    .menu-hero,
+    .gallery-hero,
+    .reservation-hero {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    /* SMALL MOBILE FOOTER STYLING */
+    .footer {
+        background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+        color: #FAF7F2 !important;
+    }
+
+    .footer-title,
+    .footer-subtitle {
+        color: #C9A961 !important;
+    }
+
+    .footer-description,
+    .footer-links a,
+    .contact-info p,
+    .hours-info p,
+    .footer-bottom p {
+        color: #FAF7F2 !important;
+    }
+
+    .social-link i {
+        color: #FAF7F2 !important;
+    }
+
     /* Global */
     :root {
         --container-padding: 0 15px;
