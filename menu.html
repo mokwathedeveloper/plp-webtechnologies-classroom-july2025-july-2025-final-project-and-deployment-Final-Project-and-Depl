@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <meta name="description" content="BistroDelight Menu - Explore our exquisite culinary offerings">
     <title>Menu - BistroDelight</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EMERGENCY CHROME FIX - Inline styles -->
+    <style>
+        .featured-dishes, .values-section, .map-section, .reservation-section, .stats-section {
+            background: #FAF7F2 !important;
+            background-color: #FAF7F2 !important;
+            background-image: none !important;
+        }
+        .story-section, .chef-section, .contact-section, .cta-section, .contact-hero, .menu-section {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+        }
+
+        /* FOOTER STYLING - Ensure proper colors */
+        .footer {
+            background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+            color: #FAF7F2 !important;
+        }
+        .footer-title, .footer-subtitle { color: #C9A961 !important; }
+        .footer-description, .footer-links a, .contact-info p, .hours-info p, .footer-bottom p { color: #FAF7F2 !important; }
+        .social-link i { color: #FAF7F2 !important; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -293,5 +318,18 @@
     <script src="js/main.js"></script>
     <script src="js/ui-enhancements.js"></script>
     <script src="js/mobile-enhancements.js"></script>
+
+    <!-- CHROME BACKGROUND FIX - Nuclear option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.featured-dishes, .values-section, .map-section, .reservation-section');
+            sections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FAF7F2', 'important');
+                    section.style.setProperty('background', '#FAF7F2', 'important');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
