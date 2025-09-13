@@ -2318,34 +2318,83 @@ html {
     margin-top: 0;
 }
 
-/* Social media link styling - Professional appearance */
+/* Social media link styling - Premium professional appearance */
 .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    transition: background 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Social media icons - Professional styling */
+/* Social media icons - Premium styling */
 .social-link i {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--cream);
-    transition: color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 2;
 }
 
-/* Professional hover effects - Subtle and elegant */
+/* Premium hover effects - Luxury and sophisticated */
 .social-link:hover {
-    background: var(--primary-gold);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    border-color: var(--primary-gold);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
 }
 
 .social-link:hover i {
     color: var(--white);
+    transform: scale(1.1);
+}
+
+/* Shimmer effect on hover */
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+    z-index: 1;
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+/* Platform-specific hover colors for brand recognition */
+.social-link[aria-label="Facebook"]:hover {
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+.social-link[aria-label="Instagram"]:hover {
+    background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
+    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+}
+
+.social-link[aria-label="Twitter"]:hover {
+    background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+}
+
+/* Active state for better interaction feedback */
+.social-link:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: transform 0.1s ease;
 }
 
 
@@ -2796,11 +2845,15 @@ html {
     }
 
     .social-link {
-        width: 36px;
-        height: 36px;
+        width: 42px;
+        height: 42px;
     }
 
     .social-link i {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    .social-link:hover {
+        transform: translateY(-2px) scale(1.03);
     }
 }
