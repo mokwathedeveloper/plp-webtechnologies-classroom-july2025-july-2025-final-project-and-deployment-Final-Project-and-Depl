@@ -709,4 +709,102 @@ if (menuItems.length > 0) {
             this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.08)';
         });
     });
+
+    // =========================
+    // GALLERY MODAL FUNCTIONALITY
+    // Image lightbox for gallery view buttons
+    // =========================
+
+    function initGalleryModal() {
+        // Create modal HTML structure
+        const modalHTML = `
+            <div id="gallery-modal" class="gallery-modal">
+                <div class="gallery-modal-content">
+                    <span class="gallery-modal-close">&times;</span>
+                    <img id="gallery-modal-image" src="" alt="Gallery Image">
+                    <div class="gallery-modal-nav">
+                        <button id="gallery-prev" class="gallery-nav-btn">&#8249;</button>
+                        <button id="gallery-next" class="gallery-nav-btn">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Add modal to body if it doesn't exist
+        if (!document.getElementById('gallery-modal')) {
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        const modal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('gallery-modal-image');
+        const closeBtn = document.querySelector('.gallery-modal-close');
+        const galleryBtns = document.querySelectorAll('.gallery-btn');
+
+        let currentImageIndex = 0;
+        let galleryImages = [];
+
+        // Collect all gallery images
+        galleryBtns.forEach((btn, index) => {
+            const imageUrl = btn.getAttribute('data-image');
+            if (imageUrl) {
+                galleryImages.push(imageUrl);
+
+                // Add click event to gallery buttons
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentImageIndex = index;
+                    openModal(imageUrl);
+                });
+            }
+        });
+
+        function openModal(imageSrc) {
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal events
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'flex') {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    navigateGallery(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateGallery(1);
+                }
+            }
+        });
+
+        // Navigation buttons
+        document.getElementById('gallery-prev').addEventListener('click', () => navigateGallery(-1));
+        document.getElementById('gallery-next').addEventListener('click', () => navigateGallery(1));
+
+        function navigateGallery(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+            modalImage.src = galleryImages[currentImageIndex];
+        }
+    }
+
+    // Initialize gallery modal
+    initGalleryModal();
 }
