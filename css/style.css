@@ -63,15 +63,10 @@
     transform: translateX(2px);
 }
 
-/* Social media icons */
+/* Social media icons - Static styling without animations */
 .social-link i {
     font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.social-link:hover i {
-    transform: scale(1.2);
-    color: var(--primary-gold);
+    /* Removed transition for static icons */
 }
 
 /* Contact info icons */
@@ -2321,16 +2316,24 @@ html {
 }
 
 /* =========================
-   FOOTER
-   Contact information and links
+   FOOTER SECTION
+   Professional footer with static social media icons
+
+   Structure:
+   - Grid layout for responsive footer sections
+   - Static social media icons (no animations)
+   - Consistent spacing and alignment
+   - Mobile-first responsive design
 ========================= */
 
+/* Main footer container with dark background */
 .footer {
     background-color: var(--dark-brown);
     color: var(--cream);
     padding: 3rem 0 1rem;
 }
 
+/* Footer content grid - Responsive layout for footer sections */
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2338,38 +2341,45 @@ html {
     margin-bottom: 2rem;
 }
 
+/* Footer section titles - Brand color for visual hierarchy */
 .footer-title {
     color: var(--primary-gold);
     margin-bottom: 1rem;
 }
 
+/* Footer subsection titles - Consistent styling */
 .footer-subtitle {
     color: var(--primary-gold);
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
+/* Footer description text - Subtle opacity for visual hierarchy */
 .footer-description {
     color: var(--cream);
     margin-bottom: 1.5rem;
     opacity: 0.9;
 }
 
+/* Social media icons container - Clean horizontal layout */
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem; /* Increased spacing for better visual separation */
+    align-items: center; /* Ensure vertical alignment */
+    justify-content: flex-start; /* Left-aligned on desktop */
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
+/* Social media link styling - Static without hover animations */
 .social-link {
     display: inline-block;
     font-size: 1.5rem;
-    transition: var(--transition);
+    /* Removed transition for static behavior */
 }
 
-.social-link:hover {
-    transform: translateY(-2px);
-}
+/* Removed hover transform effect for professional static appearance */
 
+/* Footer navigation links - Clean list styling */
 .footer-links {
     list-style: none;
 }
@@ -2378,6 +2388,7 @@ html {
     margin-bottom: 0.5rem;
 }
 
+/* Footer link styling - Maintains hover effects for navigation links */
 .footer-links a {
     color: var(--cream);
     text-decoration: none;
@@ -2390,12 +2401,14 @@ html {
     opacity: 1;
 }
 
+/* Contact and hours information styling */
 .contact-info p,
 .hours-info p {
     margin-bottom: 0.5rem;
     opacity: 0.9;
 }
 
+/* Footer bottom section - Copyright and legal information */
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
