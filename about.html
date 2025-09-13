@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <meta name="description" content="About BistroDelight - Our story, values, and culinary philosophy">
     <title>About - BistroDelight</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EMERGENCY CHROME FIX - Inline styles -->
+    <style>
+        /* FORCE PROFESSIONAL LIGHT THEME */
+        html { color-scheme: light !important; }
+        body { background-color: #FFFFFF !important; color: #2D2D2D !important; }
+
+        .featured-dishes, .values-section, .map-section, .reservation-section, .stats-section {
+            background: #FAF7F2 !important;
+            background-color: #FAF7F2 !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+        .story-section, .chef-section, .contact-section, .cta-section, .contact-hero, .about-hero {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+
+        /* Force visible text */
+        h1, h2, h3, h4, h5, h6 { color: #2C1810 !important; }
+        p, span, div, li, a { color: #2D2D2D !important; }
+
+        /* HERO TEXT EXCEPTION - Keep white for visibility */
+        .hero-title, .hero-subtitle, .hero-text, .hero-text h1, .hero-text p {
+            color: #FFFFFF !important;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+        }
+
+        /* FOOTER STYLING - Ensure proper colors */
+        .footer {
+            background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+            color: #FAF7F2 !important;
+        }
+        .footer-title, .footer-subtitle { color: #C9A961 !important; }
+        .footer-description, .footer-links a, .contact-info p, .hours-info p, .footer-bottom p { color: #FAF7F2 !important; }
+        .social-link i { color: #FAF7F2 !important; }
+    </style>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -50,7 +93,7 @@
     </header>
 
     <!-- About Hero Section -->
-    <section class="about-hero">
+    <section class="about-hero" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="hero-background">
             <img src="images/hero/hero4.webp" alt="BistroDelight restaurant interior" loading="eager">
             <div class="hero-overlay"></div>
@@ -81,7 +124,7 @@
     </section>
 
     <!-- Our Story Section -->
-    <section class="story-section">
+    <section class="story-section" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="container">
             <div class="story-content">
                 <div class="story-text">
@@ -128,7 +171,7 @@
     </section>
 
     <!-- Values Section -->
-    <section class="values-section">
+    <section class="values-section" style="background-color: #FAF7F2 !important; background: #FAF7F2 !important;">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">Our Foundation</span>
@@ -219,7 +262,7 @@
     </section>
 
     <!-- Chef Section -->
-    <section class="chef-section">
+    <section class="chef-section" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="container">
             <div class="chef-content">
                 <div class="chef-image">
@@ -278,7 +321,7 @@
     </section>
 
     <!-- Statistics Section -->
-    <section class="stats-section">
+    <section class="stats-section" style="background-color: #FAF7F2 !important; background: #FAF7F2 !important;">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat">
@@ -306,7 +349,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="cta-section">
+    <section class="cta-section" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Experience BistroDelight</h2>
@@ -375,5 +418,53 @@
     <script src="js/main.js"></script>
     <script src="js/ui-enhancements.js"></script>
     <script src="js/mobile-enhancements.js"></script>
+
+    <!-- CHROME BACKGROUND FIX - Nuclear option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cream background sections
+            const creamSections = document.querySelectorAll('.featured-dishes, .values-section, .map-section, .reservation-section, .stats-section');
+            creamSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FAF7F2', 'important');
+                    section.style.setProperty('background', '#FAF7F2', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                    section.style.setProperty('color', '#2D2D2D', 'important');
+                }
+            });
+
+            // White background sections
+            const whiteSections = document.querySelectorAll('.story-section, .chef-section, .contact-section, .cta-section, .contact-hero, .about-hero');
+            whiteSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FFFFFF', 'important');
+                    section.style.setProperty('background', '#FFFFFF', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                    section.style.setProperty('color', '#2D2D2D', 'important');
+                }
+            });
+
+            // Force body background
+            document.body.style.setProperty('background-color', '#FFFFFF', 'important');
+            document.body.style.setProperty('color', '#2D2D2D', 'important');
+
+            // Force hero text to be white and visible
+            const heroTexts = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-text, .hero-text h1, .hero-text p');
+            heroTexts.forEach(text => {
+                if (text) {
+                    text.style.setProperty('color', '#FFFFFF', 'important');
+                    text.style.setProperty('text-shadow', '2px 2px 8px rgba(0, 0, 0, 0.8)', 'important');
+                }
+            });
+
+            // Lighten hero overlays
+            const overlays = document.querySelectorAll('.slide-overlay, .hero-overlay');
+            overlays.forEach(overlay => {
+                if (overlay) {
+                    overlay.style.setProperty('background', 'linear-gradient(135deg, rgba(60, 36, 21, 0.3) 0%, rgba(60, 36, 21, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%)', 'important');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
