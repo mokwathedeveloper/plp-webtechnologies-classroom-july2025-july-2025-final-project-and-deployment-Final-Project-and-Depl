@@ -30,39 +30,71 @@
 }
 
 /* =========================
-   BROWSER COMPATIBILITY FIXES
-   Ensure consistent rendering across all browsers
+   MOZILLA FIREFOX COMPATIBILITY LAYER
+   Apply Firefox's exact rendering behavior to Chrome
 ========================= */
 
-/* Force consistent background rendering */
+/* Firefox-style rendering for all browsers */
 .featured-dishes,
 .values-section,
 .map-section,
 .reservation-section {
-    /* Webkit browsers (Chrome, Safari) */
+    /* Mozilla-style background handling */
+    -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    /* Force hardware acceleration for smoother rendering */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    /* Ensure consistent color space rendering */
-    color-profile: sRGB;
+
+    /* Firefox-style color rendering */
+    -moz-color-profile: sRGB;
     -webkit-color-profile: sRGB;
+    color-profile: sRGB;
+
+    /* Mozilla-style box model */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Firefox-style text rendering */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
+
+    /* Force consistent background like Firefox */
+    background-color: #FAF7F2 !important;
+    background: #FAF7F2 !important;
 }
 
-/* Additional Chrome-specific fixes */
+/* CHROME-FIREFOX COMPATIBILITY LAYER */
+/* Make Chrome behave exactly like Firefox */
 @supports (-webkit-appearance: none) {
     .featured-dishes,
     .values-section,
     .map-section,
     .reservation-section {
-        /* Force consistent background rendering in Chrome */
+        /* Firefox-style background rendering in Chrome */
         background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+
+        /* Firefox-style visibility handling */
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        /* NUCLEAR OPTION: Force cream background in Chrome */
+
+        /* Firefox-style color space */
+        -webkit-color-profile: sRGB;
+        color-profile: sRGB;
+
+        /* Apply Firefox's exact background behavior */
         background: #FAF7F2 !important;
         background-color: #FAF7F2 !important;
+        background-image: none !important;
+
+        /* Firefox-style text rendering */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 }
 
@@ -78,12 +110,14 @@
     }
 }
 
-/* ULTIMATE CHROME FIX - Using specific Chrome detection */
+/* FIREFOX BEHAVIOR REPLICATION FOR CHROME */
+/* This targets only Chrome (not Firefox) and applies Firefox's exact behavior */
 @supports (-webkit-appearance: none) and (not ((-moz-appearance: none))) {
     .featured-dishes,
     .values-section,
     .map-section,
     .reservation-section {
+        /* Replicate Firefox's background handling exactly */
         background: #FAF7F2 !important;
         background-color: #FAF7F2 !important;
         background-image: none !important;
@@ -91,6 +125,24 @@
         background-repeat: no-repeat !important;
         background-position: 0 0 !important;
         background-size: auto !important;
+
+        /* Firefox-style box model in Chrome */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        /* Firefox-style color rendering in Chrome */
+        -webkit-color-profile: sRGB;
+        color-profile: sRGB;
+
+        /* Firefox-style font rendering in Chrome */
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        font-smooth: always;
+
+        /* Firefox-style layout behavior */
+        display: block;
+        position: relative;
+        z-index: auto;
     }
 }
 
@@ -640,15 +692,29 @@ p, span, div, li, a {
     color: #6B6B6B !important;
 }
 
-/* Chrome-specific fix to match Firefox rendering */
+/* MOZILLA FIREFOX RENDERING REPLICATION */
+/* Apply Firefox's exact rendering behavior to Chrome */
 @supports (-webkit-appearance:none) {
     .featured-dishes,
     .values-section,
     .map-section,
     .reservation-section,
     .stats-section {
+        /* Firefox-style background rendering */
         background-color: #FAF7F2 !important;
+        background: #FAF7F2 !important;
         color: #2D2D2D !important;
+
+        /* Firefox-style text and font handling */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-smooth: always;
+
+        /* Firefox-style box model */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     .story-section,
@@ -662,10 +728,75 @@ p, span, div, li, a {
     .menu-hero,
     .gallery-hero,
     .reservation-hero {
+        /* Firefox-style white background rendering */
         background-color: #FFFFFF !important;
         background: #FFFFFF !important;
         color: #2D2D2D !important;
+
+        /* Firefox-style text rendering */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-smooth: always;
+
+        /* Firefox-style box model */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
+}
+
+/* CHROME-FIREFOX COMPATIBILITY CLASS */
+/* Applied via JavaScript to Chrome browsers */
+.chrome-firefox-compat .featured-dishes,
+.chrome-firefox-compat .values-section,
+.chrome-firefox-compat .map-section,
+.chrome-firefox-compat .reservation-section,
+.chrome-firefox-compat .stats-section {
+    /* Force Firefox-style rendering in Chrome */
+    background-color: #FAF7F2 !important;
+    background: #FAF7F2 !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 0 !important;
+    background-size: auto !important;
+
+    /* Firefox-style color and font rendering */
+    -webkit-color-profile: sRGB !important;
+    color-profile: sRGB !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    font-smooth: always !important;
+
+    /* Firefox-style box model */
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.chrome-firefox-compat .story-section,
+.chrome-firefox-compat .chef-section,
+.chrome-firefox-compat .contact-section,
+.chrome-firefox-compat .cta-section,
+.chrome-firefox-compat .contact-hero,
+.chrome-firefox-compat .menu-section,
+.chrome-firefox-compat .gallery-section,
+.chrome-firefox-compat .about-hero,
+.chrome-firefox-compat .menu-hero,
+.chrome-firefox-compat .gallery-hero,
+.chrome-firefox-compat .reservation-hero {
+    /* Force Firefox-style white backgrounds in Chrome */
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    background-image: none !important;
+
+    /* Firefox-style font rendering */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    font-smooth: always !important;
 }
 
 .container {
@@ -3181,14 +3312,37 @@ html {
    professional light theme across ALL browsers and ALL pages
 ========================= */
 
-/* NUCLEAR OPTION - Force light theme everywhere */
+/* FIREFOX RENDERING ENGINE EMULATION FOR CHROME */
+/* Apply Firefox's exact rendering behavior globally */
 * {
     color-scheme: light !important;
+
+    /* Firefox-style box model for all elements */
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+
+    /* Firefox-style text rendering for all elements */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    font-smooth: always !important;
 }
 
 html, body {
     background-color: #FFFFFF !important;
     color: #2D2D2D !important;
+
+    /* Firefox-style color profile */
+    -webkit-color-profile: sRGB !important;
+    -moz-color-profile: sRGB !important;
+    color-profile: sRGB !important;
+
+    /* Firefox-style font rendering */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+    font-smooth: always !important;
 }
 
 /* Force all sections to have proper backgrounds - FINAL OVERRIDE */

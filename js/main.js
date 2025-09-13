@@ -94,6 +94,49 @@ const PerformanceUtils = {
 };
 
 // =========================
+// FIREFOX-CHROME COMPATIBILITY LAYER
+// Make Chrome behave exactly like Firefox
+// =========================
+
+// Detect browser and apply Firefox-style behavior to Chrome
+const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+const isFirefox = /Firefox/.test(navigator.userAgent);
+
+if (isChrome) {
+    // Apply Firefox-style rendering to Chrome
+    document.documentElement.classList.add('chrome-firefox-compat');
+
+    // Firefox-style background handling for Chrome
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.featured-dishes, .values-section, .map-section, .reservation-section, .stats-section');
+        sections.forEach(section => {
+            // Apply Firefox's exact background behavior
+            section.style.setProperty('background-color', '#FAF7F2', 'important');
+            section.style.setProperty('background', '#FAF7F2', 'important');
+            section.style.setProperty('background-image', 'none', 'important');
+            section.style.setProperty('background-attachment', 'scroll', 'important');
+
+            // Firefox-style color profile
+            section.style.setProperty('-webkit-color-profile', 'sRGB', 'important');
+            section.style.setProperty('color-profile', 'sRGB', 'important');
+
+            // Firefox-style font rendering
+            section.style.setProperty('-webkit-font-smoothing', 'antialiased', 'important');
+            section.style.setProperty('text-rendering', 'optimizeLegibility', 'important');
+        });
+
+        // Apply Firefox-style white backgrounds
+        const whiteSections = document.querySelectorAll('.story-section, .chef-section, .contact-section, .cta-section, .contact-hero, .menu-section, .gallery-section, .about-hero, .menu-hero, .gallery-hero, .reservation-hero');
+        whiteSections.forEach(section => {
+            section.style.setProperty('background-color', '#FFFFFF', 'important');
+            section.style.setProperty('background', '#FFFFFF', 'important');
+            section.style.setProperty('-webkit-font-smoothing', 'antialiased', 'important');
+            section.style.setProperty('text-rendering', 'optimizeLegibility', 'important');
+        });
+    });
+}
+
+// =========================
 // MOBILE PERFORMANCE OPTIMIZATION
 // Optimize performance on mobile devices
 // =========================
