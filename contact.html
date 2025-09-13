@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <meta name="description" content="Contact BistroDelight - Reservations, location, and contact information">
     <title>Contact - BistroDelight</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EMERGENCY CHROME FIX - Inline styles -->
+    <style>
+        /* FORCE PROFESSIONAL LIGHT THEME */
+        html { color-scheme: light !important; }
+        body { background-color: #FFFFFF !important; color: #2D2D2D !important; }
+
+        .featured-dishes, .values-section, .map-section, .reservation-section {
+            background: #FAF7F2 !important;
+            background-color: #FAF7F2 !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+        .story-section, .chef-section, .contact-section, .cta-section, .contact-hero {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+
+        /* Force visible text */
+        h1, h2, h3, h4, h5, h6 { color: #2C1810 !important; }
+        p, span, div, li, a { color: #2D2D2D !important; }
+
+        /* FOOTER STYLING - Ensure proper colors */
+        .footer {
+            background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+            color: #FAF7F2 !important;
+        }
+        .footer-title, .footer-subtitle { color: #C9A961 !important; }
+        .footer-description, .footer-links a, .contact-info p, .hours-info p, .footer-bottom p { color: #FAF7F2 !important; }
+        .social-link i { color: #FAF7F2 !important; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -50,7 +85,7 @@
     </header>
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <section class="contact-hero" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="container">
             <div class="section-header">
                 <h1 class="section-title">Get In Touch</h1>
@@ -60,7 +95,7 @@
     </section>
 
     <!-- Contact Content -->
-    <section class="contact-section">
+    <section class="contact-section" style="background-color: #FFFFFF !important; background: #FFFFFF !important;">
         <div class="container">
             <div class="contact-content">
                 <!-- Contact Form -->
@@ -171,7 +206,7 @@
     </section>
 
     <!-- Map Section -->
-    <section class="map-section">
+    <section class="map-section" style="background-color: #FAF7F2 !important; background: #FAF7F2 !important;">
         <div class="container">
             <h2 class="section-title">Find Us</h2>
             <div class="map-container">
@@ -241,5 +276,36 @@
     <script src="js/main.js"></script>
     <script src="js/ui-enhancements.js"></script>
     <script src="js/mobile-enhancements.js"></script>
+
+    <!-- CHROME BACKGROUND FIX - Nuclear option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cream background sections
+            const creamSections = document.querySelectorAll('.featured-dishes, .values-section, .map-section, .reservation-section');
+            creamSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FAF7F2', 'important');
+                    section.style.setProperty('background', '#FAF7F2', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                    section.style.setProperty('color', '#2D2D2D', 'important');
+                }
+            });
+
+            // White background sections
+            const whiteSections = document.querySelectorAll('.story-section, .chef-section, .contact-section, .cta-section, .contact-hero');
+            whiteSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FFFFFF', 'important');
+                    section.style.setProperty('background', '#FFFFFF', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                    section.style.setProperty('color', '#2D2D2D', 'important');
+                }
+            });
+
+            // Force body background
+            document.body.style.setProperty('background-color', '#FFFFFF', 'important');
+            document.body.style.setProperty('color', '#2D2D2D', 'important');
+        });
+    </script>
 </body>
 </html>
