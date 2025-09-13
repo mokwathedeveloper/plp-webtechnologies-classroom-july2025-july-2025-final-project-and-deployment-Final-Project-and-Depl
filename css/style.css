@@ -63,10 +63,20 @@
     transform: translateX(2px);
 }
 
-/* Social media icons - Static styling without animations */
+/* Social media icons - Completely static without any animations */
 .social-link i {
     font-size: 1.2rem;
-    /* Removed transition for static icons */
+    /* Override any global transitions - completely static */
+    transition: none !important;
+    transform: none !important;
+}
+
+/* Ensure social media icons remain static on hover */
+.social-link:hover i {
+    /* No hover effects - completely static */
+    transition: none !important;
+    transform: none !important;
+    color: inherit; /* Maintain original color */
 }
 
 /* Contact info icons */
@@ -2370,11 +2380,20 @@ html {
     flex-wrap: wrap; /* Allow wrapping on very small screens */
 }
 
-/* Social media link styling - Static without hover animations */
+/* Social media link styling - Completely static without any animations */
 .social-link {
     display: inline-block;
     font-size: 1.5rem;
-    /* Removed transition for static behavior */
+    /* Override global transitions - completely static */
+    transition: none !important;
+    transform: none !important;
+}
+
+/* Ensure social media icons remain static on hover */
+.social-link:hover {
+    /* No hover effects - completely static */
+    transition: none !important;
+    transform: none !important;
 }
 
 /* Removed hover transform effect for professional static appearance */
