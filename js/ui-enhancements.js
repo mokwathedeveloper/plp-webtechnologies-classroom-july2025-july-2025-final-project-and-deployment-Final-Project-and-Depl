@@ -274,39 +274,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         },
         
-        // Floating Action Button
+        // Floating Action Button - DISABLED
+        // Removed floating action button as requested by user
         setupFloatingActionButton: function() {
-            // Create FAB if it doesn't exist
-            if (!document.querySelector('.fab')) {
-                const fab = document.createElement('a');
-                fab.href = '#top';
-                fab.className = 'fab tooltip';
-                fab.setAttribute('data-tooltip', 'Back to Top');
-                fab.innerHTML = '<i class="fas fa-arrow-up"></i>';
-                fab.style.opacity = '0';
-                fab.style.visibility = 'hidden';
-                document.body.appendChild(fab);
-                
-                // Show/hide FAB based on scroll position
-                window.addEventListener('scroll', () => {
-                    if (window.pageYOffset > 300) {
-                        fab.style.opacity = '1';
-                        fab.style.visibility = 'visible';
-                    } else {
-                        fab.style.opacity = '0';
-                        fab.style.visibility = 'hidden';
-                    }
-                });
-                
-                // Smooth scroll to top
-                fab.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
+            // FAB functionality disabled - no floating button in bottom right
+            return;
         }
     };
     

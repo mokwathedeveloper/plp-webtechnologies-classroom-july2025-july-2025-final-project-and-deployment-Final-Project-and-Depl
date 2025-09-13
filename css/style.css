@@ -63,20 +63,17 @@
     transform: translateX(2px);
 }
 
-/* Social media icons - Completely static without any animations */
+/* Social media icons - Professional hover effects */
 .social-link i {
     font-size: 1.2rem;
-    /* Override any global transitions - completely static */
-    transition: none !important;
-    transform: none !important;
+    transition: all 0.3s ease;
+    color: var(--cream);
 }
 
-/* Ensure social media icons remain static on hover */
+/* Social media icons hover effects */
 .social-link:hover i {
-    /* No hover effects - completely static */
-    transition: none !important;
-    transform: none !important;
-    color: inherit; /* Maintain original color */
+    color: var(--primary-gold);
+    transform: scale(1.1);
 }
 
 /* Contact info icons */
@@ -461,30 +458,8 @@ html {
     transform: scaleX(1);
 }
 
-/* Floating Action Button */
-.fab {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(201, 169, 97, 0.4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
-}
-
-.fab:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 30px rgba(201, 169, 97, 0.6);
-}
+/* Floating Action Button - REMOVED
+   No floating button in bottom right corner as requested by user */
 
 /* Global Reset */
 * {
@@ -2381,20 +2356,20 @@ html {
     margin-top: 0; /* No extra top margin - directly below description */
 }
 
-/* Social media link styling - Completely static without any animations */
+/* Social media link styling - Professional hover effects */
 .social-link {
     display: inline-block;
     font-size: 1.5rem;
-    /* Override global transitions - completely static */
-    transition: none !important;
-    transform: none !important;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: transparent;
 }
 
-/* Ensure social media icons remain static on hover */
+/* Social media link hover effects */
 .social-link:hover {
-    /* No hover effects - completely static */
-    transition: none !important;
-    transform: none !important;
+    background: rgba(201, 169, 97, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Removed hover transform effect for professional static appearance */
