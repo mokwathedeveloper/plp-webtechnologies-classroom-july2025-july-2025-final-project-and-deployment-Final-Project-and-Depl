@@ -950,6 +950,100 @@
     outline-offset: 2px;
 }
 
+/* =========================
+   RESERVATIONS PAGE RESPONSIVE STYLES
+   Mobile-first responsive design for reservations
+========================= */
+
+/* Tablet Styles - 768px and below */
+@media screen and (max-width: 768px) {
+
+    /* Reservation Hero */
+    .reservation-hero {
+        height: 50vh;
+        min-height: 350px;
+        background-attachment: scroll;
+    }
+
+    .reservation-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .reservation-hero p {
+        font-size: 1.1rem;
+    }
+
+    /* Reservation Content */
+    .reservation-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .reservation-info,
+    .reservation-form-container {
+        padding: 2rem;
+    }
+
+    /* Form Rows */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .reservation-features {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Styles - 480px and below */
+@media screen and (max-width: 480px) {
+
+    /* Reservation Hero */
+    .reservation-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .reservation-hero h1 {
+        font-size: 2rem;
+    }
+
+    .reservation-hero p {
+        font-size: 1rem;
+    }
+
+    /* Reservation Content */
+    .reservation-info,
+    .reservation-form-container {
+        padding: 1.5rem;
+    }
+
+    .reservation-info h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Form Elements */
+    .reservation-form .form-group input,
+    .reservation-form .form-group select,
+    .reservation-form .form-group textarea {
+        padding: 0.8rem;
+    }
+
+    .reservation-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Features */
+    .feature {
+        gap: 0.75rem;
+    }
+
+    .feature i {
+        font-size: 1.3rem;
+    }
+}
+
 /* Hover Effects for Touch Devices */
 @media (hover: hover) {
     .dish-card:hover {
