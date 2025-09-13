@@ -2345,56 +2345,39 @@ html {
     z-index: 2;
 }
 
-/* Premium hover effects - Luxury and sophisticated */
+/* Professional hover effects - NO FLOATING, static position */
 .social-link:hover {
     background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
     border-color: var(--primary-gold);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+    /* NO transform - icons stay in place */
 }
 
 .social-link:hover i {
     color: var(--white);
-    transform: scale(1.1);
+    /* NO transform - icons stay in place */
 }
 
-/* Shimmer effect on hover */
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s;
-    z-index: 1;
-}
+/* NO shimmer effect - clean and professional */
 
-.social-link:hover::before {
-    left: 100%;
-}
-
-/* Platform-specific hover colors for brand recognition */
+/* Platform-specific hover colors - NO FLOATING, static position */
 .social-link[aria-label="Facebook"]:hover {
     background: linear-gradient(135deg, #1877f2, #42a5f5);
-    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+    /* NO box-shadow movement */
 }
 
 .social-link[aria-label="Instagram"]:hover {
     background: linear-gradient(135deg, #e4405f, #fd1d1d, #fcb045);
-    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+    /* NO box-shadow movement */
 }
 
 .social-link[aria-label="Twitter"]:hover {
     background: linear-gradient(135deg, #1da1f2, #0d8bd9);
-    box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+    /* NO box-shadow movement */
 }
 
-/* Active state for better interaction feedback */
+/* Active state - NO MOVEMENT */
 .social-link:active {
-    transform: translateY(-1px) scale(1.02);
-    transition: transform 0.1s ease;
+    /* NO transform - icons stay in place */
 }
 
 
@@ -2854,6 +2837,6 @@ html {
     }
 
     .social-link:hover {
-        transform: translateY(-2px) scale(1.03);
+        /* NO transform on mobile - icons stay in place */
     }
 }
