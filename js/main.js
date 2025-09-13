@@ -1,6 +1,40 @@
+/*
+=============================================================================
+BISTRODELIGHT - MAIN JAVASCRIPT FILE
+=============================================================================
+Description: Core JavaScript functionality for BistroDelight restaurant website
+Author:      BistroDelight Development Team
+Version:     2.0.0
+Last Update: 2025-01-13
+
+Features:
+- Responsive hamburger menu with scroll lock
+- Interactive hero carousel with touch/swipe support
+- Dynamic menu filtering system
+- Form validation and submission
+- Progressive Web App (PWA) functionality
+- Cross-browser compatibility (Firefox-Chrome)
+- WCAG 2.1 AA accessibility compliance
+- Performance optimized with debouncing and throttling
+- Mobile-first responsive interactions
+
+Browser Support:
+- ES6+ features with graceful degradation
+- Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+- Mobile browsers with touch event support
+
+Performance Features:
+- Passive event listeners for smooth scrolling
+- Debounced resize and scroll handlers
+- Hardware-accelerated animations
+- Lazy loading implementation
+- Efficient DOM manipulation
+=============================================================================
+*/
+
 // =========================
-// MAIN JAVASCRIPT FILE
-// Handles navigation, animations, and interactions with accessibility & performance enhancements
+// ACCESSIBILITY UTILITIES
+// Screen reader support and keyboard navigation
 // =========================
 
 // Accessibility utilities

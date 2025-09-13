@@ -1,3 +1,35 @@
+/*
+=============================================================================
+BISTRODELIGHT - RESPONSIVE STYLESHEET
+=============================================================================
+Description: Mobile-first responsive design for all screen sizes
+Author:      BistroDelight Development Team
+Version:     2.0.0
+Last Update: 2025-01-13
+
+Breakpoints:
+- Small Mobile:  320px - 479px
+- Mobile:        480px - 767px
+- Tablet:        768px - 1023px
+- Desktop:       1024px - 1199px
+- Large Desktop: 1200px+
+
+Features:
+- Mobile-first approach for optimal performance
+- Flexible grid systems with CSS Grid and Flexbox
+- Optimized typography scaling
+- Touch-friendly interface elements
+- Enhanced hamburger menu for mobile
+- Performance optimized animations
+- Accessibility-focused responsive design
+
+Device Coverage:
+- iPhone SE (320px) to 4K displays (2560px+)
+- Portrait and landscape orientations
+- High-DPI/Retina display support
+=============================================================================
+*/
+
 /* =========================
    ENHANCED MOBILE RESPONSIVE DESIGN
    Advanced mobile-first responsive styles with touch optimizations

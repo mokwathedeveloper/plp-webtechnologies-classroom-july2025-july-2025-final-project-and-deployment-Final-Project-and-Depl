@@ -1,4 +1,4 @@
-# 🍴 BistroDelight - Premier Fine Dining Experience
+![alt text](image.png)# 🍴 BistroDelight - Premier Fine Dining Experience
 
 > **A professional, responsive restaurant website showcasing exceptional cuisine and elegant atmosphere in Westlands, Nairobi, Kenya.**
 
