@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="BistroDelight - Premier fine dining restaurant in Westlands, Nairobi. Experience exquisite cuisine, professional service, and elegant atmosphere. Reservations available.">
@@ -48,6 +50,46 @@
     <title>BistroDelight - Premier Fine Dining Restaurant in Westlands, Nairobi | Kenya</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EMERGENCY CHROME FIX - Inline styles -->
+    <style>
+        /* FORCE PROFESSIONAL LIGHT THEME */
+        html { color-scheme: light !important; }
+        body { background-color: #FFFFFF !important; color: #2D2D2D !important; }
+
+        .featured-dishes, .values-section, .map-section, .reservation-section, .stats-section {
+            background: #FAF7F2 !important;
+            background-color: #FAF7F2 !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+        .story-section, .chef-section, .contact-section, .cta-section, .contact-hero, .gallery-section, .gallery-hero, .about-hero {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+            color: #2D2D2D !important;
+        }
+
+        /* Force visible text */
+        h1, h2, h3, h4, h5, h6 { color: #2C1810 !important; }
+        p, span, div, li, a { color: #2D2D2D !important; }
+
+        /* HERO TEXT EXCEPTION - Keep white for visibility */
+        .hero-title, .hero-subtitle, .hero-text, .hero-text h1, .hero-text p {
+            color: #FFFFFF !important;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+        }
+
+        /* FOOTER STYLING - Ensure proper colors */
+        .footer {
+            background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+            color: #FAF7F2 !important;
+        }
+        .footer-title, .footer-subtitle { color: #C9A961 !important; }
+        .footer-description, .footer-links a, .contact-info p, .hours-info p, .footer-bottom p { color: #FAF7F2 !important; }
+        .social-link i { color: #FAF7F2 !important; }
+    </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -411,6 +453,8 @@
     <script src="js/ui-enhancements.js"></script>
     <script src="js/mobile-enhancements.js"></script>
 
+
+
     <!-- PWA Registration -->
     <script>
         // Register Service Worker for PWA functionality
@@ -527,6 +571,28 @@
             }
             deferredPrompt = null;
         }
+    </script>
+
+    <!-- CHROME HERO TEXT FIX - Nuclear option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force hero text to be white and visible
+            const heroTexts = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-text, .hero-text h1, .hero-text p');
+            heroTexts.forEach(text => {
+                if (text) {
+                    text.style.setProperty('color', '#FFFFFF', 'important');
+                    text.style.setProperty('text-shadow', '2px 2px 8px rgba(0, 0, 0, 0.8)', 'important');
+                }
+            });
+
+            // Lighten hero overlays
+            const overlays = document.querySelectorAll('.slide-overlay, .hero-overlay');
+            overlays.forEach(overlay => {
+                if (overlay) {
+                    overlay.style.setProperty('background', 'linear-gradient(135deg, rgba(60, 36, 21, 0.3) 0%, rgba(60, 36, 21, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%)', 'important');
+                }
+            });
+        });
     </script>
 </body>
 </html>
