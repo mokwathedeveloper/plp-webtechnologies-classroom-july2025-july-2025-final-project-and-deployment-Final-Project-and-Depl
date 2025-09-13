@@ -716,6 +716,12 @@ if (menuItems.length > 0) {
     // =========================
 
     function initGalleryModal() {
+        // Only initialize if we're on a page with gallery buttons
+        const galleryBtns = document.querySelectorAll('.gallery-btn');
+        if (galleryBtns.length === 0) {
+            return; // No gallery buttons found, skip initialization
+        }
+
         // Create modal HTML structure
         const modalHTML = `
             <div id="gallery-modal" class="gallery-modal">
@@ -738,12 +744,11 @@ if (menuItems.length > 0) {
         const modal = document.getElementById('gallery-modal');
         const modalImage = document.getElementById('gallery-modal-image');
         const closeBtn = document.querySelector('.gallery-modal-close');
-        const galleryBtns = document.querySelectorAll('.gallery-btn');
 
         let currentImageIndex = 0;
         let galleryImages = [];
 
-        // Collect all gallery images
+        // Collect all gallery images and add click events
         galleryBtns.forEach((btn, index) => {
             const imageUrl = btn.getAttribute('data-image');
             if (imageUrl) {
@@ -752,6 +757,7 @@ if (menuItems.length > 0) {
                 // Add click event to gallery buttons
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     currentImageIndex = index;
                     openModal(imageUrl);
                 });
@@ -759,27 +765,36 @@ if (menuItems.length > 0) {
         });
 
         function openModal(imageSrc) {
-            modalImage.src = imageSrc;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            if (modalImage && modal) {
+                modalImage.src = imageSrc;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // Close modal events
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
 
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
-            if (modal.style.display === 'flex') {
+            if (modal && modal.style.display === 'flex') {
                 if (e.key === 'Escape') {
                     closeModal();
                 } else if (e.key === 'ArrowLeft') {
@@ -791,17 +806,28 @@ if (menuItems.length > 0) {
         });
 
         // Navigation buttons
-        document.getElementById('gallery-prev').addEventListener('click', () => navigateGallery(-1));
-        document.getElementById('gallery-next').addEventListener('click', () => navigateGallery(1));
+        const prevBtn = document.getElementById('gallery-prev');
+        const nextBtn = document.getElementById('gallery-next');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => navigateGallery(-1));
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => navigateGallery(1));
+        }
 
         function navigateGallery(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex < 0) {
-                currentImageIndex = galleryImages.length - 1;
-            } else if (currentImageIndex >= galleryImages.length) {
-                currentImageIndex = 0;
+            if (galleryImages.length > 0) {
+                currentImageIndex += direction;
+                if (currentImageIndex < 0) {
+                    currentImageIndex = galleryImages.length - 1;
+                } else if (currentImageIndex >= galleryImages.length) {
+                    currentImageIndex = 0;
+                }
+                if (modalImage) {
+                    modalImage.src = galleryImages[currentImageIndex];
+                }
             }
-            modalImage.src = galleryImages[currentImageIndex];
         }
     }
 

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setupSmoothScrolling();
             this.setupIntersectionObserver();
             this.setupAdvancedNavigation();
-            this.setupFloatingActionButton();
+
         },
         
         // Scroll-triggered animations
@@ -274,12 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         },
         
-        // Floating Action Button - DISABLED
-        // Removed floating action button as requested by user
-        setupFloatingActionButton: function() {
-            // FAB functionality disabled - no floating button in bottom right
-            return;
-        }
+
     };
     
     // Initialize all UI enhancements
