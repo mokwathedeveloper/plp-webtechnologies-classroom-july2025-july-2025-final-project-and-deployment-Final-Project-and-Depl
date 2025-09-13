@@ -8,9 +8,9 @@
     --primary-gold: #C9A961;        /* Sophisticated champagne gold */
     --secondary-gold: #B8860B;      /* Darker gold for depth */
     --accent-burgundy: #722F37;     /* Refined burgundy instead of deep red */
-    --cream: #FAF7F2;               /* Warmer cream */
+    --cream: #FAF7F2;               /* Warmer cream - primary background */
     --dark-brown: #2C1810;          /* Richer dark brown */
-    --light-gray: #F8F6F3;          /* Warm light gray */
+    --light-gray: #F8F6F3;          /* Warm light gray - for subtle elements */
     --medium-gray: #6B6B6B;         /* Professional medium gray */
     --dark-gray: #2D2D2D;           /* Softer dark gray */
     --white: #FFFFFF;
@@ -27,6 +27,71 @@
 
     /* Transitions - Optimized for performance */
     --transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+/* =========================
+   BROWSER COMPATIBILITY FIXES
+   Ensure consistent rendering across all browsers
+========================= */
+
+/* Force consistent background rendering */
+.featured-dishes,
+.values-section,
+.map-section,
+.reservation-section {
+    /* Webkit browsers (Chrome, Safari) */
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /* Force hardware acceleration for smoother rendering */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    /* Ensure consistent color space rendering */
+    color-profile: sRGB;
+    -webkit-color-profile: sRGB;
+}
+
+/* Additional Chrome-specific fixes */
+@supports (-webkit-appearance: none) {
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section {
+        /* Force consistent background rendering in Chrome */
+        background-attachment: scroll !important;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* NUCLEAR OPTION: Force cream background in Chrome */
+        background: #FAF7F2 !important;
+        background-color: #FAF7F2 !important;
+    }
+}
+
+/* CHROME NUCLEAR FIX - Last resort override */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section {
+        background: #FAF7F2 !important;
+        background-color: #FAF7F2 !important;
+        -webkit-background-color: #FAF7F2 !important;
+    }
+}
+
+/* ULTIMATE CHROME FIX - Using specific Chrome detection */
+@supports (-webkit-appearance: none) and (not ((-moz-appearance: none))) {
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section {
+        background: #FAF7F2 !important;
+        background-color: #FAF7F2 !important;
+        background-image: none !important;
+        background-attachment: scroll !important;
+        background-repeat: no-repeat !important;
+        background-position: 0 0 !important;
+        background-size: auto !important;
+    }
 }
 
 /* =========================
@@ -463,6 +528,144 @@ body {
     line-height: 1.6;
     color: var(--dark-gray);
     background-color: var(--white);
+    /* Force professional light theme */
+    background-color: #FFFFFF !important;
+    color: #2D2D2D !important;
+}
+
+/* FORCE PROFESSIONAL LIGHT THEME - Override any dark mode */
+html {
+    color-scheme: light !important;
+}
+
+body {
+    background-color: #FFFFFF !important;
+    color: #2D2D2D !important;
+}
+
+/* COMPREHENSIVE SECTION BACKGROUND FIXES */
+/* Cream background sections */
+.featured-dishes,
+.values-section,
+.map-section,
+.reservation-section,
+.stats-section {
+    background-color: #FAF7F2 !important;
+    background: #FAF7F2 !important;
+    color: #2D2D2D !important;
+}
+
+/* White background sections */
+.story-section,
+.chef-section,
+.contact-section,
+.cta-section,
+.contact-hero,
+.menu-section,
+.gallery-section,
+.about-hero,
+.menu-hero,
+.gallery-hero,
+.reservation-hero {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #2D2D2D !important;
+}
+
+/* Hero sections with background images - keep text white */
+.hero-carousel,
+.about-hero {
+    color: #FFFFFF !important;
+}
+
+.hero-carousel .hero-title,
+.hero-carousel .hero-subtitle,
+.about-hero .hero-title,
+.about-hero .hero-subtitle {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Footer styling - ensure proper colors */
+.footer {
+    background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+    color: #FAF7F2 !important;
+}
+
+.footer-title,
+.footer-subtitle {
+    color: #C9A961 !important;
+}
+
+.footer-description,
+.footer-links a,
+.contact-info p,
+.hours-info p,
+.footer-bottom p {
+    color: #FAF7F2 !important;
+}
+
+.social-link i {
+    color: #FAF7F2 !important;
+}
+
+/* Force visible text colors for all content */
+h1, h2, h3, h4, h5, h6 {
+    color: #2C1810 !important;
+}
+
+p, span, div, li, a {
+    color: #2D2D2D !important;
+}
+
+.section-title {
+    color: #2C1810 !important;
+}
+
+.section-subtitle {
+    color: #6B6B6B !important;
+}
+
+/* Additional text elements */
+.dish-name,
+.value-title,
+.chef-name,
+.menu-name {
+    color: #2C1810 !important;
+}
+
+.dish-description,
+.value-description,
+.menu-description {
+    color: #6B6B6B !important;
+}
+
+/* Chrome-specific fix to match Firefox rendering */
+@supports (-webkit-appearance:none) {
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section,
+    .stats-section {
+        background-color: #FAF7F2 !important;
+        color: #2D2D2D !important;
+    }
+
+    .story-section,
+    .chef-section,
+    .contact-section,
+    .cta-section,
+    .contact-hero,
+    .menu-section,
+    .gallery-section,
+    .about-hero,
+    .menu-hero,
+    .gallery-hero,
+    .reservation-hero {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
 }
 
 .container {
@@ -998,9 +1201,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(60, 36, 21, 0.8) 0%,
-        rgba(60, 36, 21, 0.6) 50%,
-        rgba(0, 0, 0, 0.4) 100%
+        rgba(60, 36, 21, 0.3) 0%,
+        rgba(60, 36, 21, 0.2) 50%,
+        rgba(0, 0, 0, 0.1) 100%
     );
     z-index: 2;
 }
@@ -1146,7 +1349,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .featured-dishes {
     padding: var(--section-padding);
-    background-color: var(--light-gray);
+    background-color: #FAF7F2;
 }
 
 .dishes-grid {
@@ -1364,9 +1567,9 @@ img {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(60, 36, 21, 0.85) 0%,
-        rgba(60, 36, 21, 0.7) 50%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(60, 36, 21, 0.4) 0%,
+        rgba(60, 36, 21, 0.3) 50%,
+        rgba(0, 0, 0, 0.2) 100%
     );
     z-index: 2;
 }
@@ -1542,7 +1745,7 @@ img {
 /* Values Section */
 .values-section {
     padding: var(--section-padding);
-    background: linear-gradient(135deg, var(--light-gray) 0%, var(--cream) 100%);
+    background-color: #FAF7F2;
 }
 
 .values-section .section-header {
@@ -2235,7 +2438,11 @@ html {
 
 .map-section {
     padding: var(--section-padding);
-    background: var(--light-gray);
+    /* AGGRESSIVE FIX: Force cream background in Chrome */
+    background: #FAF7F2 !important;
+    background-color: #FAF7F2 !important;
+    -webkit-background-color: #FAF7F2 !important;
+    background-image: none !important;
 }
 
 .map-container {
@@ -2274,39 +2481,88 @@ html {
    - Mobile-first responsive design
 ========================= */
 
-/* Main footer container with dark background */
+/* Main footer container with elegant gradient background */
 .footer {
-    background-color: var(--dark-brown);
-    color: var(--cream);
-    padding: 3rem 0 1rem;
+    background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%);
+    color: #FAF7F2;
+    padding: 4rem 0 1.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Footer content grid - Responsive layout for footer sections */
+/* Cool background pattern overlay */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Footer content grid - Enhanced responsive layout */
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
-/* Footer section titles - Brand color for visual hierarchy */
+/* Footer section titles - Enhanced brand styling */
 .footer-title {
-    color: var(--primary-gold);
-    margin-bottom: 1rem;
+    color: #C9A961;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-/* Footer subsection titles - Consistent styling */
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #C9A961, transparent);
+    border-radius: 2px;
+}
+
+/* Footer subsection titles - Modern styling */
 .footer-subtitle {
-    color: var(--primary-gold);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    color: #C9A961;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
 }
 
-/* Footer description text - Subtle opacity for visual hierarchy */
+.footer-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #C9A961;
+    border-radius: 1px;
+}
+
+/* Footer description text - Enhanced readability */
 .footer-description {
-    color: var(--cream);
-    margin-bottom: 1.5rem; /* Space for social icons below */
-    opacity: 0.9;
+    color: #FAF7F2;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Social media icons container - Horizontal layout below description */
@@ -2318,25 +2574,25 @@ html {
     margin-top: 0;
 }
 
-/* Social media link styling - Premium professional appearance */
+/* Social media link styling - Cool modern appearance */
 .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border: 2px solid rgba(201, 169, 97, 0.3);
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(201, 169, 97, 0.1));
+    border: 2px solid rgba(201, 169, 97, 0.4);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-decoration: none;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Elegant glow effect background */
+/* Cool glow effect background */
 .social-link::before {
     content: '';
     position: absolute;
@@ -2345,28 +2601,28 @@ html {
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    background: linear-gradient(135deg, #C9A961, #D4AF37);
     opacity: 0;
     transform: scale(0.8);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
 }
 
-/* Social media icons - Premium styling */
+/* Social media icons - Modern styling */
 .social-link i {
-    font-size: 1.3rem;
-    color: var(--cream);
+    font-size: 1.4rem;
+    color: #FAF7F2;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     z-index: 2;
     transform: scale(1);
 }
 
-/* Professional hover effects with elegant animations */
+/* Cool hover effects with smooth animations */
 .social-link:hover {
-    border-color: var(--primary-gold);
-    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
-    transform: translateY(-2px);
+    border-color: #C9A961;
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.5);
+    transform: translateY(-3px) scale(1.05);
 }
 
 .social-link:hover::before {
@@ -2400,41 +2656,90 @@ html {
 
 
 
-/* Footer navigation links - Clean list styling */
+/* Footer navigation links - Modern list styling */
 .footer-links {
     list-style: none;
 }
 
 .footer-links li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    position: relative;
 }
 
-/* Footer link styling - Maintains hover effects for navigation links */
+/* Footer link styling - Cool hover effects */
 .footer-links a {
-    color: var(--cream);
+    color: #FAF7F2;
     text-decoration: none;
-    opacity: 0.9;
-    transition: var(--transition);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.footer-links a::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #C9A961;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    transform: translateX(-5px);
+    opacity: 0;
 }
 
 .footer-links a:hover {
-    color: var(--primary-gold);
+    color: #C9A961;
+    transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+    transform: translateX(0);
     opacity: 1;
 }
 
-/* Contact and hours information styling */
+/* Contact and hours information styling - Enhanced */
 .contact-info p,
 .hours-info p {
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
+    margin-bottom: 0.8rem;
+    color: #FAF7F2;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Footer bottom section - Copyright and legal information */
+.contact-info i,
+.hours-info i {
+    color: #C9A961;
+    width: 16px;
+    text-align: center;
+}
+
+/* Footer bottom section - Enhanced styling */
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
-    opacity: 0.8;
+    padding-top: 2.5rem;
+    border-top: 2px solid rgba(201, 169, 97, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C9A961, transparent);
+}
+
+.footer-bottom p {
+    color: #FAF7F2;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* =========================
@@ -2491,7 +2796,11 @@ html {
 /* Reservation Main Section */
 .reservation-section {
     padding: var(--section-padding);
-    background: var(--light-gray);
+    /* AGGRESSIVE FIX: Force cream background in Chrome */
+    background: #FAF7F2 !important;
+    background-color: #FAF7F2 !important;
+    -webkit-background-color: #FAF7F2 !important;
+    background-image: none !important;
 }
 
 .reservation-content {
@@ -2863,5 +3172,118 @@ html {
     .social-link:active {
         transform: scale(0.95);
         transition: transform 0.1s ease;
+    }
+}
+
+/* =========================
+   FINAL OVERRIDE - FORCE LIGHT THEME ON ALL PAGES
+   This is the final, most important override that ensures
+   professional light theme across ALL browsers and ALL pages
+========================= */
+
+/* NUCLEAR OPTION - Force light theme everywhere */
+* {
+    color-scheme: light !important;
+}
+
+html, body {
+    background-color: #FFFFFF !important;
+    color: #2D2D2D !important;
+}
+
+/* Force all sections to have proper backgrounds - FINAL OVERRIDE */
+section, .section, main, article, div[class*="section"] {
+    background-color: inherit !important;
+}
+
+/* Cream background sections - FINAL */
+.featured-dishes,
+.values-section,
+.map-section,
+.reservation-section,
+.stats-section {
+    background-color: #FAF7F2 !important;
+    background: #FAF7F2 !important;
+    color: #2D2D2D !important;
+}
+
+/* White background sections - FINAL */
+.story-section,
+.chef-section,
+.contact-section,
+.cta-section,
+.contact-hero,
+.menu-section,
+.gallery-section,
+.about-hero,
+.menu-hero,
+.gallery-hero,
+.reservation-hero {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #2D2D2D !important;
+}
+
+/* Force all text to be visible - FINAL */
+h1, h2, h3, h4, h5, h6,
+.section-title, .dish-name, .value-title, .chef-name, .menu-name {
+    color: #2C1810 !important;
+}
+
+p, span, div, li, a,
+.section-subtitle, .dish-description, .value-description, .menu-description {
+    color: #2D2D2D !important;
+}
+
+/* HERO TEXT EXCEPTION - Keep white for visibility against background images */
+.hero-title, .hero-subtitle, .hero-text, .hero-text h1, .hero-text p {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.about-hero .hero-title, .about-hero .hero-subtitle {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Disable any dark mode media queries - FINAL */
+@media (prefers-color-scheme: dark) {
+    /* FORCE LIGHT THEME EVEN IN DARK MODE */
+    :root {
+        --white: #FFFFFF !important;
+        --light-gray: #F8F6F3 !important;
+        --cream: #FAF7F2 !important;
+        --dark-gray: #2D2D2D !important;
+        --medium-gray: #6B6B6B !important;
+        --dark-brown: #2C1810 !important;
+    }
+
+    body {
+        background-color: #FFFFFF !important;
+        color: #2D2D2D !important;
+    }
+
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section,
+    .stats-section {
+        background-color: #FAF7F2 !important;
+        background: #FAF7F2 !important;
+    }
+
+    .story-section,
+    .chef-section,
+    .contact-section,
+    .cta-section,
+    .contact-hero,
+    .menu-section,
+    .gallery-section,
+    .about-hero,
+    .menu-hero,
+    .gallery-hero,
+    .reservation-hero {
+        background-color: #FFFFFF !important;
+        background: #FFFFFF !important;
     }
 }
