@@ -905,11 +905,13 @@
     }
 }
 
-/* Dark Mode Support */
+/* DISABLED - Dark Mode Support (Force professional light theme always) */
+/*
 @media (prefers-color-scheme: dark) {
     :root {
         --white: #1a1a1a;
         --light-gray: #2a2a2a;
+        --cream: #2a2a2a;
         --dark-gray: #e0e0e0;
         --medium-gray: #b0b0b0;
     }
@@ -918,10 +920,16 @@
         background-color: rgba(26, 26, 26, 0.95);
     }
 
-    .dish-card {
+    .dish-card,
+    .featured-dishes,
+    .values-section,
+    .map-section,
+    .reservation-section {
         background-color: var(--light-gray);
+        background-color: #2a2a2a;
     }
 }
+*/
 
 /* Print Styles */
 @media print {
