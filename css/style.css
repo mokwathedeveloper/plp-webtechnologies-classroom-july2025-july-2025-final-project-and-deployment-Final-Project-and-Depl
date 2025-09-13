@@ -63,17 +63,17 @@
     transform: translateX(2px);
 }
 
-/* Social media icons - Professional hover effects */
+/* Social media icons - Professional and minimal */
 .social-link i {
     font-size: 1.2rem;
-    transition: var(--transition);
+    transition: color 0.3s ease, opacity 0.3s ease;
     color: var(--cream);
 }
 
-/* Social media icons hover effects */
+/* Social media icons hover effects - Professional and subtle */
 .social-link:hover i {
     color: var(--primary-gold);
-    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 /* Contact info icons */
@@ -2331,23 +2331,20 @@ html {
     margin-top: 0; /* No extra top margin - directly below description */
 }
 
-/* Social media link styling - Professional hover effects */
+/* Social media link styling - Professional and minimal */
 .social-link {
     display: inline-block;
     font-size: 1.5rem;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease;
     padding: 0.5rem;
     border-radius: 50%;
     background: transparent;
 }
 
-/* Social media link hover effects */
+/* Social media link hover effects - Subtle professional appearance */
 .social-link:hover {
-    background: rgba(201, 169, 97, 0.1);
-    transform: translateY(-2px);
+    opacity: 0.8;
 }
-
-/* Removed hover transform effect for professional static appearance */
 
 /* Footer navigation links - Clean list styling */
 .footer-links {
