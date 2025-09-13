@@ -893,9 +893,15 @@
         transition: transform 0.1s ease;
     }
 
-    /* Social links remain static on mobile for professional appearance */
+    /* Enhanced mobile social link interactions */
     .social-link:active {
-        /* No transform animation for social media icons */
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+
+    /* Disable hover lift effect on mobile */
+    .social-link:hover {
+        transform: none;
     }
 }
 
