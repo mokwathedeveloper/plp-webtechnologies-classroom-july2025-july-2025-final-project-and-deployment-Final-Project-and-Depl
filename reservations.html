@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Make a reservation at BistroDelight - Premier fine dining restaurant in Westlands, Nairobi. Book your table online for an unforgettable dining experience.">
@@ -24,6 +26,29 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EMERGENCY CHROME FIX - Inline styles -->
+    <style>
+        .featured-dishes, .values-section, .map-section, .reservation-section {
+            background: #FAF7F2 !important;
+            background-color: #FAF7F2 !important;
+            background-image: none !important;
+        }
+        .story-section, .chef-section, .contact-section, .cta-section, .contact-hero {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            background-image: none !important;
+        }
+
+        /* FOOTER STYLING - Ensure proper colors */
+        .footer {
+            background: linear-gradient(135deg, #2C1810 0%, #3C2415 50%, #2C1810 100%) !important;
+            color: #FAF7F2 !important;
+        }
+        .footer-title, .footer-subtitle { color: #C9A961 !important; }
+        .footer-description, .footer-links a, .contact-info p, .hours-info p, .footer-bottom p { color: #FAF7F2 !important; }
+        .social-link i { color: #FAF7F2 !important; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -99,7 +124,7 @@
     </section>
 
     <!-- Reservation Form Section -->
-    <section class="reservation-section">
+    <section class="reservation-section" style="background-color: #FAF7F2 !important; background: #FAF7F2 !important;">
         <div class="container">
             <div class="reservation-content">
                 <div class="reservation-info">
@@ -306,5 +331,30 @@
     <script src="js/ui-enhancements.js"></script>
     <script src="js/mobile-enhancements.js"></script>
     <script src="js/reservations.js"></script>
+
+    <!-- CHROME BACKGROUND FIX - Nuclear option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cream background sections
+            const creamSections = document.querySelectorAll('.featured-dishes, .values-section, .map-section, .reservation-section');
+            creamSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FAF7F2', 'important');
+                    section.style.setProperty('background', '#FAF7F2', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                }
+            });
+
+            // White background sections
+            const whiteSections = document.querySelectorAll('.story-section, .chef-section, .contact-section, .cta-section, .contact-hero');
+            whiteSections.forEach(section => {
+                if (section) {
+                    section.style.setProperty('background-color', '#FFFFFF', 'important');
+                    section.style.setProperty('background', '#FFFFFF', 'important');
+                    section.style.setProperty('background-image', 'none', 'important');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
